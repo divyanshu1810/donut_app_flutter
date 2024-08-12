@@ -15,29 +15,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // my tabs
   List<Widget> myTabs = const [
-    // donut tab
     MyTab(
       iconPath: 'lib/icons/donut.png',
     ),
-
-    // burger tab
     MyTab(
       iconPath: 'lib/icons/burger.png',
     ),
-
-    // smoothie tab
     MyTab(
       iconPath: 'lib/icons/smoothie.png',
     ),
-
-    // pancake tab
     MyTab(
       iconPath: 'lib/icons/pancakes.png',
     ),
-
-    // pizza tab
     MyTab(
       iconPath: 'lib/icons/pizza.png',
     ),
@@ -59,9 +49,7 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.grey[800],
                 size: 36,
               ),
-              onPressed: () {
-                // open drawer
-              },
+              onPressed: () {},
             ),
           ),
           actions: [
@@ -73,9 +61,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.grey[800],
                   size: 36,
                 ),
-                onPressed: () {
-                  // account button tapped
-                },
+                onPressed: () {},
               ),
             )
           ],
@@ -89,10 +75,10 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 children: [
                   Text(
-                    'I want to eat',
+                    'I want to',
                     style: TextStyle(fontSize: 24, color: Colors.grey[600]),
                   ),
-                  Text(
+                  const Text(
                     ' EAT',
                     style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                   ),
@@ -100,27 +86,16 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            // tab bar
             TabBar(tabs: myTabs),
 
-            // tab bar view
             Expanded(
               child: TabBarView(
                 children: [
-                  // donut page
                   DonutTab(),
-
-                  // burger page
-                  BurgerTab(),
-
-                  // smoothie page
-                  SmoothieTab(),
-
-                  // pancake page
-                  PancakeTab(),
-
-                  // pizza page
-                  PizzaTab(),
+                  const BurgerTab(),
+                  const SmoothieTab(),
+                  const PancakeTab(),
+                  const PizzaTab(),
                 ],
               ),
             )

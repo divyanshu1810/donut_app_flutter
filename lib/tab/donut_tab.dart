@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../util/donut_tile.dart';
 
+// ignore: must_be_immutable
 class DonutTab extends StatelessWidget {
   // list of donuts
   List donutsOnSale = [
@@ -12,12 +13,14 @@ class DonutTab extends StatelessWidget {
     ["Choco", "95", Colors.brown, "lib/images/chocolate_donut.png"],
   ];
 
+  DonutTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: donutsOnSale.length,
-      padding: EdgeInsets.all(12),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      padding: const EdgeInsets.all(12),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 1 / 1.5,
       ),
